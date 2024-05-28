@@ -15,6 +15,10 @@ app.use("/posts",postsRouter)
 app.use("/comment",commentRouter)
 
 // &====================================================================
+app.get('/', (req, res,next) => {
+    res.status(404).json({message: 'Hello To My Project'});
+})
+
 app.use('*', (req, res,next) => {
     res.status(404).json({message: '404 Not Found'});
 })
